@@ -44,7 +44,8 @@ function editarHabitacion(peticion=request, respuesta=response){
 
     respuesta.json
     ({
-        mensaje:"editando el jugador: "+id
+        mensaje:"editando el jugador: "+id,
+        datos:datosPeticion
     })
 
 }

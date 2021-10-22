@@ -44,7 +44,8 @@ function editarCliente(peticion=request, respuesta=response){
 
     respuesta.json
     ({
-        mensaje:"editando el cliente: "+id
+        mensaje:"editando el cliente: "+id,
+        datos:datosPeticion
     })
 
 }
