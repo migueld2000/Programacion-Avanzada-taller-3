@@ -1,15 +1,15 @@
 //configuar variables de entorno
 
-require('dotenv').config()
+require("dotenv").config();
 
 //importar el servidor
 
-const ServidorModelo=require("./models/ServidorModelo")
+const ServidorModelo = require("./models/ServidorModelo.js");
 
- //crear un objeto d ela clase servidor
- 
- const servidorFPC=new ServidorModelo()
+//crear un objeto d ela clase servidor
 
- //deespertar el servicio 
+const servidorFPC = new ServidorModelo();
 
- servidorFPC.despertarServidor()
+//deespertar el servicio
+
+servidorFPC.despertarServidor();

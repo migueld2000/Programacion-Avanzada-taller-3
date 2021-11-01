@@ -5,14 +5,14 @@ const{conectarBD}=require('../database/conexion.js')
 
 //importar lsa rutas
 
-const rutas=require('../routes/rutas.js')
+const rutas_habitacion = require('../routes/rutas_habitacion.js')
 
 class ServidorModelo{
 
     constructor(){
         
         this.app = express()
-        //this.despertarBD()
+        this.despertarBD()
         this.llamarAuxiliares()
         this.enrutarPeticiones()
 
@@ -28,7 +28,7 @@ class ServidorModelo{
 
     enrutarPeticiones(){
 
-        this.app.use('/',rutas)
+        this.app.use('/', rutas_habitacion)
 
     }
 
@@ -42,8 +42,4 @@ class ServidorModelo{
         this.app.use(express.json())
     }
 }
-
-
-
-
 module.exports =ServidorModelo

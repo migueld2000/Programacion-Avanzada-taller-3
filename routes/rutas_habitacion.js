@@ -1,51 +1,49 @@
 //importar la clase de express(router)
-const{Router}= require('express')
-
+const { Router } = require('express')
 //usar la clase de express(router)
 
-const rutas=Router()
-
+const rutas_habitacion = Router()
 
 //importar los controladores de las habitaciones
 
-const {registrarHabitacion}= require('../controllers/controlaadores-habitacion.js')
-const {buscarHabitacion}= require('../controllers/controlaadores-habitacion.js')
-const {buscarHabitaciones}= require('../controllers/controlaadores-habitacion.js')
-const {editarHabitacion}= require('../controllers/controlaadores-habitacion.js')
-const {eliminarHabitacion}= require('../controllers/controlaadores-habitacion.js')
+const { registrarHabitacion } = require('../controllers/ControladoresHabitacion.js')
+const { buscarHabitacion } = require('../controllers/ControladoresHabitacion.js')
+const { buscarHabitaciones } = require('../controllers/ControladoresHabitacion.js')
+const { editarHabitacion } = require('../controllers/ControladoresHabitacion.js')
+const { eliminarHabitacion } = require('../controllers/ControladoresHabitacion.js')
 
 //importar los controladores de los usuarios
 
-const {registrarUsuario}= require('../controllers/controladores-usuario.js')
-const {buscarUsuario}= require('../controllers/controladores-usuario.js')
-const {buscarUsuarios}= require('../controllers/controladores-usuario.js')
-const {editarUsuario}= require('../controllers/controladores-usuario.js')
-const {eliminarUsuario}= require('../controllers/controladores-usuario.js')
+const { registrarUsuario } = require('../controllers/ControladoresUsuario.js')
+const { buscarUsuario } = require('../controllers/ControladoresUsuario.js')
+const { buscarUsuarios } = require('../controllers/ControladoresUsuario.js')
+const { editarUsuario } = require('../controllers/ControladoresUsuario.js')
+const { eliminarUsuario } = require('../controllers/ControladoresUsuario.js')
 
 //listado de rutas de las habitaciones
 
-rutas.get('/habitaciones',buscarHabitaciones) 
+rutas_habitacion.get('/habitaciones', buscarHabitaciones)
 
-rutas.get('/habitaciones/:id',buscarHabitacion) 
+rutas_habitacion.get('/habitaciones/:id', buscarHabitacion)
 
-rutas.post('/habitaciones',registrarHabitacion) 
+rutas_habitacion.post('/habitaciones', registrarHabitacion)
 
-rutas.put('/habitaciones/:id',editarHabitacion)
+rutas_habitacion.put('/habitaciones/:id', editarHabitacion)
 
-rutas.delete('/habitaciones/:id',eliminarHabitacion) 
+rutas_habitacion.delete('/habitaciones/:id', eliminarHabitacion)
 
 //listado de rutas de los buscarUsuarios
 
-rutas.get('/buscarUsuario',buscarUsuario) 
+rutas_habitacion.get('/buscarUsuario', buscarUsuario)
 
-rutas.get('/buscarUsuarios/:id',buscarUsuarios) 
+rutas_habitacion.get('/buscarUsuarios/:id', buscarUsuarios)
 
-rutas.post('/registrarUsuario',registrarUsuario) 
+rutas_habitacion.post('/registrarUsuario', registrarUsuario)
 
-rutas.put('/editarUsuario/:id',editarUsuario)
+rutas_habitacion.put('/editarUsuario/:id', editarUsuario)
 
-rutas.delete('/eliminarUsuario/:id',eliminarUsuario)
+rutas_habitacion.delete('/eliminarUsuario/:id', eliminarUsuario)
 
 //exportar las rutas
 
-  module.exports=rutas
+module.exports = rutas_habitacion
