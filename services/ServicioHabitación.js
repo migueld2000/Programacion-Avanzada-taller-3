@@ -16,14 +16,14 @@ async function insertarHabitacion(datos){
 async function leerHabitacion(id) {
 
   let BuscarHabitacion = new HabitacionModelo.findById(id)
-  return await BuscarHabitacion.save()
+  return BuscarHabitacion
 
 }
 
 async function leerHabitaciones() {
 
   let HabitacionesBuscadas = new HabitacionModelo.find()
-  return await HabitacionesBuscadas.save()
+  return await HabitacionesBuscadas
 
 }
 
