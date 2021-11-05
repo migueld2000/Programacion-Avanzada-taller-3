@@ -15,15 +15,15 @@ async function insertarHabitacion(datos){
 
 async function leerHabitacion(id) {
 
-  let BuscarHabitacion = new HabitacionModelo.findById(id)
+  let BuscarHabitacion = await HabitacionModelo.findById(id)
   return BuscarHabitacion
 
 }
 
 async function leerHabitaciones() {
 
-  let HabitacionesBuscadas = new HabitacionModelo.find()
-  return await HabitacionesBuscadas
+  let HabitacionesBuscadas = await HabitacionModelo.find()
+  return HabitacionesBuscadas
 
 }
 
