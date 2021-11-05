@@ -6,15 +6,15 @@ const { model, Schema } = require('mongoose')
 
 const HabitacionModelo = Schema({
 
-    nombre_habitación: {
+    nombre_habitacion: {
         type: String,
         required: true
     },
-    fotografía_habitación:{
+    fotografia_habitacion:{
         type: String,
         required: true
     },
-    descripción: {
+    descripcion: {
         type: String,
         required: true
     },
