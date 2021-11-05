@@ -2,7 +2,7 @@
 const { Router } = require('express')
 //usar la clase de express(router)
 
-const rutas_habitacion = Router()
+const rutas= Router()
 
 //importar los controladores de las habitaciones
 
@@ -14,36 +14,37 @@ const { eliminarHabitacion } = require('../controllers/ControladoresHabitacion.j
 
 //importar los controladores de los usuarios
 
-const { registrarUsuario } = require('../controllers/ControladoresUsuario.js')
-const { buscarUsuario } = require('../controllers/ControladoresUsuario.js')
-const { buscarUsuarios } = require('../controllers/ControladoresUsuario.js')
-const { editarUsuario } = require('../controllers/ControladoresUsuario.js')
-const { eliminarUsuario } = require('../controllers/ControladoresUsuario.js')
+const { registrarCliente } = require("../controllers/ControladoresUsuario.js");
+const { buscarCliente } = require("../controllers/ControladoresUsuario.js");
+const { buscarClientes } = require("../controllers/ControladoresUsuario.js");
+const { editarCliente } = require("../controllers/ControladoresUsuario.js");
+const { eliminarCliente } = require("../controllers/ControladoresUsuario.js");
 
 //listado de rutas de las habitaciones
 
-rutas_habitacion.get('/habitaciones', buscarHabitaciones)
+rutas.get('/habitaciones', buscarHabitaciones)
 
-rutas_habitacion.get('/habitaciones/:id', buscarHabitacion)
+rutas.get('/habitaciones/:id', buscarHabitacion)
 
-rutas_habitacion.post('/habitaciones', registrarHabitacion)
+rutas.post('/habitaciones', registrarHabitacion)
 
-rutas_habitacion.put('/habitaciones/:id', editarHabitacion)
+rutas.put('/habitaciones/:id', editarHabitacion)
 
-rutas_habitacion.delete('/habitaciones/:id', eliminarHabitacion)
+rutas.delete('/habitaciones/:id', eliminarHabitacion)
 
 //listado de rutas de los buscarUsuarios
 
-rutas_habitacion.get('/buscarUsuario', buscarUsuario)
 
-rutas_habitacion.get('/buscarUsuarios/:id', buscarUsuarios)
+rutas.get("/buscarUsuario", buscarCliente)
 
-rutas_habitacion.post('/registrarUsuario', registrarUsuario)
+rutas.get("/buscarUsuarios/:id", buscarClientes)
 
-rutas_habitacion.put('/editarUsuario/:id', editarUsuario)
+rutas.post("/registrarUsuario", registrarCliente);
 
-rutas_habitacion.delete('/eliminarUsuario/:id', eliminarUsuario)
+rutas.put("/editarUsuario/:id", editarCliente)
+
+rutas.delete("/eliminarUsuario/:id", eliminarCliente)
 
 //exportar las rutas
 
-module.exports = rutas_habitacion
+module.exports = rutas

@@ -1,11 +1,12 @@
 const express = require('express')
+const cors = require("cors");
 
 //importar la funcion para conectar con la BD
 const{conectarBD}=require('../database/conexion.js')
 
 //importar lsa rutas
 
-const rutas_habitacion = require('../routes/rutas_habitacion.js')
+const rutas = require('../routes/rutas_habitacion.js')
 
 class ServidorModelo{
 
@@ -28,7 +29,7 @@ class ServidorModelo{
 
     enrutarPeticiones(){
 
-        this.app.use('/', rutas_habitacion)
+        this.app.use('/', rutas)
 
     }
 
@@ -40,6 +41,7 @@ class ServidorModelo{
     llamarAuxiliares()
     {
         this.app.use(express.json())
+        this.app.use(cors());
     }
 }
 module.exports =ServidorModelo
