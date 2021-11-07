@@ -50,9 +50,9 @@ async function buscarHabitaciones (peticion=request, respuesta=response){
     try {
         let habitaciones= await leerHabitaciones ()
         respuesta.status(200).json({
-            estado:true,
-            mensaje:"Exito al buscar las habitaciones"
-        })
+          estado: true,
+          mensaje: habitaciones
+        });
     } catch (error) {
         respuesta.status(400).json({
             estado:false,
