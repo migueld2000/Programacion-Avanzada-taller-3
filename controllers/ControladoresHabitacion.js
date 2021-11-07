@@ -10,9 +10,10 @@ const { modificarHabitacion } = require('../services/ServicioHabitación.js')
 
 async function registrarHabitacion(peticion=request, respuesta=response) {
 
- let datosPeticion=peticion.body
  try {
+     let datosPeticion = peticion.body;
      await insertarHabitacion(datosPeticion)
+     
      respuesta.status(200).json({
          estado:true,
          mensaje:"Exito al registrar la habitacion"
