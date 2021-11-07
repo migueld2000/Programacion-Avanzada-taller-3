@@ -31,6 +31,7 @@ async function registrarHabitacion(peticion=request, respuesta=response) {
 async function buscarHabitacion (peticion=request, respuesta=response){
 
     try {
+        
         let id=peticion.params.id
         let habitacion = await leerHabitacion (id)
         respuesta.status(200).json({
