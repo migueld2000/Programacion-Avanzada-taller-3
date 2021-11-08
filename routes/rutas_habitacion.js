@@ -35,9 +35,9 @@ rutas.delete('/habitaciones/:id', eliminarHabitacion)
 //listado de rutas de los buscarUsuarios
 
 
-rutas.get("/buscarUsuario", buscarCliente)
+rutas.get("/buscarUsuarios", buscarClientes);
 
-rutas.get("/buscarUsuarios/:id", buscarClientes)
+rutas.get("/buscarUsuario/:id",buscarCliente)
 
 rutas.post("/registrarUsuario", registrarCliente);
 
