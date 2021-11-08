@@ -2,38 +2,37 @@
 
 //importar el modelo de datos para poder operar en BD
 
-const ServidorModelo=require('../models/ServidorModelo.js')
+const UsuarioModelo= require("../models/UsuarioModelo.js");
 
 async function insertarUsuario(datos){
 
-    let UsuarioNuevo = new ServidorModelo(datos)
+    let UsuarioNuevo = new UsuarioModelo(datos);
     return await UsuarioNuevo.save()
 
 }
 
 async function leerUsuario(id){
 
-    let BuscarUsuario = new ServidorModelo.findById (id)
-    return await BuscarUsuario.save()
+    let BuscarUsuario = await UsuarioModelo.findById(id);
+    return BuscarUsuario
 
 }
 
 async function leerUsuarios(){
 
-    let UsuariosBuscados = new ServidorModelo.find()
-    return await UsuariosBuscados.save()
+    let UsuariosBuscados = await UsuarioModelo.find();
+    return UsuariosBuscados
 
 }
 
-async function modificarUsuario(id){
-
-    return await ServidorModelo.findByIdAndDelete(id)
-
+async function modificarUsuario(id, datos) 
+{
+  return await UsuarioModelo.findByIdAndUpdate(id, datos);
 }
 
-async function borrarUsuario(id,datos){
+async function borrarUsuario(id){
 
-    return await ServidorModelo.findByIdAndUpdate(id,datos)
+    return await UsuarioModelo.findByIdAndDelete(id);
 
 }
 

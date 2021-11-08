@@ -12,8 +12,8 @@ const { modificarUsuario } = require('../services/ServicioRecerva.js')
 async function registrarCliente(peticion=request, respuesta=response) {
 
     //nombre//edad//posicion//dorsal//equipo
- let datosPeticion = peticion.body
  try {
+   let datosPeticion = peticion.body
    await insertarUsuario(datosPeticion)
    respuesta.status(200).json({
      estado: true,
@@ -52,8 +52,8 @@ async function buscarClientes(peticion = request, respuesta = response) {
       let usuario = await leerUsuarios()
       respuesta.status(200).json({
         estado: true,
-        mensaje: "Exito al buscar las habitaciones"
-      })
+        mensaje: usuario
+      });
     } catch (error) {
       respuesta.status(400).json({
         estado: false,
