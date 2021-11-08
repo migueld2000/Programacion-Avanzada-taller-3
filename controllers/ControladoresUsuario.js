@@ -17,13 +17,13 @@ async function registrarCliente(peticion=request, respuesta=response) {
    await insertarUsuario(datosPeticion)
    respuesta.status(200).json({
      estado: true,
-     mensaje: "Exito al registrar la habitacion"
-   })
+     mensaje: "Exito al registrar al cliente",
+   });
  } catch (error) {
    respuesta.status(400).json({
      estado: false,
-     mensaje: "Error al registrar el usuario" + error
-   })
+     mensaje: "Error al registrar el cliente" + error,
+   });
  }
 
 }
@@ -41,7 +41,7 @@ async function buscarCliente(peticion=request, respuesta=response){
     } catch (error) {
       respuesta.status(400).json({
         estado: false,
-        mensaje: "Error al buscar la habitacion: " + error
+        mensaje: "Error al buscar al cliente: " + error
       })
     }
 }
@@ -57,8 +57,8 @@ async function buscarClientes(peticion = request, respuesta = response) {
     } catch (error) {
       respuesta.status(400).json({
         estado: false,
-        mensaje: "Error al buscar la habitacion: " + error
-      })
+        mensaje: "Error al buscar a los clientes: " + error,
+      });
     }
 }
 
@@ -72,12 +72,12 @@ async function editarCliente(peticion=request, respuesta=response){
       await modificarUsuario(id, datosPeticion)
       respuesta.status(200).json({
         estado: true,
-        mensaje: "Exito al editar la habitacion"
+        mensaje: "Exito al editar al cliente"
       })
     } catch (error) {
       respuesta.status(400).json({
         estado: false,
-        mensaje: "Error al editar la habitacion: " + error
+        mensaje: "Error al editar al cliente: " + error
       })
     }
 
@@ -91,13 +91,13 @@ async function eliminarCliente(peticion=request, respuesta=response){
        await borrarUsuario(id)
        respuesta.status(200).json({
          estado: true,
-         mensaje: "Exito al borrar al jugaor"
-       })
+         mensaje: "Exito al borrar al cliente",
+       });
      } catch (error) {
        respuesta.status(400).json({
          estado: false,
-         mensaje: "Error al borrar al jugaor: " + error
-       })
+         mensaje: "Error al borrar al cliente: " + error,
+       });
      }
 
 }
