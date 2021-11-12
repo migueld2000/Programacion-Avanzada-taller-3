@@ -26,7 +26,7 @@ rutas.get('/buscarhabitacion/:id', buscarHabitacion)
 
 rutas.get('/buscarHabitaciones', buscarHabitaciones)
 
-rutas.post('/registrarHabitaciones', registrarHabitacion)
+rutas.post('/registrarHabitacion', registrarHabitacion)
 
 rutas.put('/editarHabitaciones/:id', editarHabitacion)
 
