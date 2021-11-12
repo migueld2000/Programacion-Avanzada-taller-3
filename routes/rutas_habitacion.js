@@ -22,15 +22,15 @@ const { eliminarCliente } = require("../controllers/ControladoresUsuario.js");
 
 //listado de rutas de las habitaciones
 
-rutas.get('/habitacion/:id', buscarHabitacion)
+rutas.get('/buscarhabitacion/:id', buscarHabitacion)
 
-rutas.get('/habitaciones', buscarHabitaciones)
+rutas.get('/buscarHabitaciones', buscarHabitaciones)
 
-rutas.post('/habitaciones', registrarHabitacion)
+rutas.post('/registrarHabitaciones', registrarHabitacion)
 
-rutas.put('/habitaciones/:id', editarHabitacion)
+rutas.put('/editarHabitaciones/:id', editarHabitacion)
 
-rutas.delete('/habitaciones/:id', eliminarHabitacion)
+rutas.delete('/eliminarHabitacion/:id', eliminarHabitacion)
 
 //listado de rutas de los buscarUsuarios
 
